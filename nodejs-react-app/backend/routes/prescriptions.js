@@ -32,7 +32,7 @@ router.route('/:id').get((req, res) => {
   });
   
   router.route('/:id').delete((req, res) => {
-    Precsription.findByIdAndDelete(req.params.id)
+    Prescription.findByIdAndDelete(req.params.id)
       .then(() => res.json('Prescription deleted.'))
       .catch(err => res.status(400).json('Error: ' + err));
   });
