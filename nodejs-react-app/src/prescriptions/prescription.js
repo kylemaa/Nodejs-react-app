@@ -19,7 +19,7 @@ export default function makePrescription(
             validateName('first',firstName)
             validateName('last',lastName)
             validateEmail('emailAddress')
-            return{firstName,lastName,emailAddress, ...otherInfo}
+            return {firstName,lastName,emailAddress, ...otherInfo}
         }
     //Name validate helper function   
     function validateName (label, name) {
