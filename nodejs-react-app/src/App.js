@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route} from "react-router-dom";
-
+import "boostrap/css"
 import Navbar from "./components/navbar"
 import ExercisesList from "./components/prescriptions-list";
 import EditExercise from "./components/update-prescription";
