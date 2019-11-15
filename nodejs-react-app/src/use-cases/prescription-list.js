@@ -11,7 +11,7 @@
         replace, //replace particular prescription by the id associates with the prescription
         update //update particular prescription by the id associates with the prescription 
     })
-    
+
     async function getItems({max = 100, before, after} = {}){
         const db = await database
         const query = {}
@@ -58,4 +58,7 @@
     // async function update()
     // async function remove()
     // async function replace()
+    function documentToPrescription ({ _id: contactId, ...doc }) {
+        return makeContact({ contactId, ...doc })
+      }
 }
