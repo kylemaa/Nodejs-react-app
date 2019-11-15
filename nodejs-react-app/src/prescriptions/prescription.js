@@ -1,7 +1,7 @@
 import requiredParam from '../helpers/required-param'
 /* makePrescription is a factory function that returns a frozen object that defines a prescription
 by validating the fields required in a prescription using validate method.
-In addition, the prescription infomation is injected into makePrescription function */
+In addition, the prescription information is injected into makePrescription function */
 
 export default function makePrescription(
     prescriptionInfo = requiredParam ('prescriptionInfo')
