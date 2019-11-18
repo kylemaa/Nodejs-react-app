@@ -12,6 +12,8 @@ export default function makeCommentList({commentDB}){
     const nestedComments = nest(comments)
     return nestedComments
 
-    function nest(){}
+    function nest(){
+        //push the replies of a comment into an empty array
+    }
     }
 }
