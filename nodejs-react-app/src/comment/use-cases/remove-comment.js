@@ -3,6 +3,7 @@ export default function makeRemoveComment({commentsDb}){
     return async function removeComment({commentId} ={}){
         if(!commentId){
             // throw error 
+            throw new Error('You must supply a comment id.')
         }
         commentToDelete = commentsDb.findById({commentId})
         if(!commentToDelete){
