@@ -1,12 +1,12 @@
 /** In this use case, we would return a async function 
  * that would return a PROMISE (that attached callbacks) list of comment by looking at the
  * injected database. */
-export default function makeCommentList({commentDB}){
+export default function makeCommentList({commentsDb}){
     return async function getComments({postId} ={}){
         if (!postId){
             //Some error
         }
-    const comments = await commentDB.findByPostId({
+    const comments = await commentsDb.findByPostId({
         postId
     })
     const nestedComments = nest(comments)
