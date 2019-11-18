@@ -1,7 +1,7 @@
 import makeComment from '../comment-entity'
 export default function makeEditComment({commentsDB}){
     // 'changes' overwrite the existing properties with the ones we're passing
-    return async function editComment({commentId, ... changes}){
+    return async function editComment({commentId, ... changes} = {}){
     // check for error states 
         if (!id) {
             throw new Error('You must supply an id.')
