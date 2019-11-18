@@ -11,5 +11,7 @@ export default function makeCommentList({commentDB}){
     })
     const nestedComments = nest(comments)
     return nestedComments
+
+    function nest(){}
     }
 }
