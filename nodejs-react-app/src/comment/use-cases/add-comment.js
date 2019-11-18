@@ -28,5 +28,6 @@ export default function makeAddCommment({commentsDB, handleModeration}){
         },
         text: moderated.getText()
       })
+      
     }
 }
