@@ -32,6 +32,7 @@ app.use(express.json());
 // app.use('/users', usersRouter);
 
 // app.listen(port, () => {console.log(`Server is running on port ${port}`)});
+const apiRoot = process.env.DM_API_ROOT
 app.post(`${apiRoot}/comments`, makeCallback(postComment))
 app.delete(`${apiRoot}/comments/:id`, makeCallback(deleteComment))
 app.delete(`${apiRoot}/comments`, makeCallback(deleteComment))
