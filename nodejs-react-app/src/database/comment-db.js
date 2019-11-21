@@ -56,4 +56,5 @@ export default function makeCommentsDb ({ makeDb }) {
         ...found
       }))
     }
+    //TODO: insert, remove, update
 }
