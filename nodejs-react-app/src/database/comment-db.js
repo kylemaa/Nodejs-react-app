@@ -32,6 +32,7 @@ export default function makeCommentsDb ({ makeDb }) {
       const result = await db.collection('comments').find(query)
       return(await result.toArray()).map(({_id: id, ...found}) => ({id, ...found}))
     }
+    /** use comment's has to find comment*/
     async function findByHash (comment) {
       const db = await makeDb()
       const result = await db.collection('comments').find({ hash: comment.hash })
@@ -42,8 +43,10 @@ export default function makeCommentsDb ({ makeDb }) {
       const { _id: id, ...insertedInfo } = found[0]
       return { id, ...insertedInfo }
     }
+    /** use commentId to find comment's replies*/
     async function findReplies ({ commentId, publishedOnly = true }) {
       const db = await makeDb()
+      // if comment is published, then replyToId: commentId else don't set 'published'
       const query = publishedOnly
         ? { published: true, replyToId: commentId }
         : { replyToId: commentId }
