@@ -42,4 +42,15 @@ export default function makeCommentsDb ({ makeDb }) {
       const { _id: id, ...insertedInfo } = found[0]
       return { id, ...insertedInfo }
     }
+    async function findReplies ({ commentId, publishedOnly = true }) {
+      const db = await makeDb()
+      const query = publishedOnly
+        ? { published: true, replyToId: commentId }
+        : { replyToId: commentId }
+      const result = await db.collection('comments').find(query)
+      return (await result.toArray()).map(({ _id: id, ...found }) => ({
+        id,
+        ...found
+      }))
+    }
 }
