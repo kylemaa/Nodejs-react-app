@@ -2,6 +2,14 @@ const express = require('express');
 const cors = require ('cors');
 const mongoose = require('mongoose')
 
+import {
+  deleteComment,
+  getComments,
+  postComment,
+  patchComment
+} from '../src/comment/controllers'
+import makeCallback from '../src/express-callbacks'
+
 require('dotenv').config();
 
 const app = express();
