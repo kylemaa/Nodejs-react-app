@@ -22,4 +22,14 @@ export default function makeCommentsDb ({ makeDb }) {
       const {_id: id, ...info} = found[0]
       return {id, ...info}
     }
+    /** use post id to find comment(s) in a post*/
+    async function findByPostId ({ postId, omitReplies = true }) {
+      const db = await makeDb()
+      const query = { postId: postId }
+      if (omitReplies) {
+        query.replyToId = null
+      }
+      const result = await db.collection('comments').find(query)
+      return(await result.toArray()).map(({_id: id, ...found}) => ({id, ...found}))
+    }
 }
