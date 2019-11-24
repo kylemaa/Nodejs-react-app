@@ -56,7 +56,7 @@ export default function makeCommentsDb ({ makeDb }) {
         ...found
       }))
     }
-    //TODO: remove, update
+    //TODO: update
     async function insert ({ id: _id = Id.makeId(), ...commentInfo }) {
     const db = await makeDb()
     const result = await db
@@ -65,4 +65,10 @@ export default function makeCommentsDb ({ makeDb }) {
     const { _id: id, ...insertedInfo } = result.ops[0]
     return { id, ...insertedInfo }
   }
+   async function remove({id: _id}){
+    const db = await makeDB()
+    const result = await db.collection('comments').deleteOne({_id})
+    return result.deletedCount
+   {
+    
 }
