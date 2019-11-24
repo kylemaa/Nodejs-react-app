@@ -65,7 +65,7 @@ export default function makeCommentsDb ({ makeDb }) {
     const { _id: id, ...insertedInfo } = result.ops[0]
     return { id, ...insertedInfo }
   }
-   async function remove({id: _id}){
+    async function remove({id: _id}){
     const db = await makeDB()
     const result = await db.collection('comments').deleteOne({_id})
     return result.deletedCount
