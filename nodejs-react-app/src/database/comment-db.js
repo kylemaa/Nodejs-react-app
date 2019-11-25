@@ -70,5 +70,16 @@ export default function makeCommentsDb ({ makeDb }) {
     const result = await db.collection('comments').deleteOne({_id})
     return result.deletedCount
    {
+       
+    async function update ({ id: _id, ...commentInfo }) {
+    const db = await makeDb()
+    const result = await db
+      .collection('comments')
+    // Using the aggregation pipeline allows for a more expressive update statement
+    // such as expressing conditional updates based on current field values 
+    // or updating one field using the value of another field(s).
+      .updateOne({ _id }, { $set: { ...commentInfo } })
+    return result.modifiedCount > 0 ? { id: _id, ...commentInfo } : null
+  }
     
 }
