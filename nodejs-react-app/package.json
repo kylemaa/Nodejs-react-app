@@ -19,7 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest src --watch",
+    "test:e2e": "jest ./__test__ --runInBand",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
