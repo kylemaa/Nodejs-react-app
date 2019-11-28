@@ -69,7 +69,7 @@ export default function makeCommentsDb ({ makeDb }) {
     const db = await makeDB()
     const result = await db.collection('comments').deleteOne({_id})
     return result.deletedCount
-   {
+    }
        
     async function update ({ id: _id, ...commentInfo }) {
     const db = await makeDb()
@@ -80,6 +80,6 @@ export default function makeCommentsDb ({ makeDb }) {
     // or updating one field using the value of another field(s).
       .updateOne({ _id }, { $set: { ...commentInfo } })
     return result.modifiedCount > 0 ? { id: _id, ...commentInfo } : null
-  }
+    }
     
 }
