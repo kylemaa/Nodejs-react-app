@@ -8,6 +8,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongodb-memory-server": "^6.0.1",
     "mongoose": "^5.7.10",
     "nodemon": "^1.19.4",
     "react": "^16.11.0",
@@ -25,9 +26,9 @@
   },
   "jest": {
     "verbose": false,
-    "globalSetup": "./__test__/jest-setup.js",
-    "globalTeardown": "./__test__/jest-teardown.js",
-    "testEnvironment": "./__test__/jest-mongo.js"
+    "globalSetup": "./jest-setup.js",
+    "globalTeardown": "./jest-teardown.js",
+    "testEnvironment": "./jest-mongo.js"
   },
   "eslintConfig": {
     "extends": "react-app"
