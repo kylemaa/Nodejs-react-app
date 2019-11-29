@@ -23,6 +23,12 @@
     "test:e2e": "jest ./__test__ --runInBand",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "verbose": false,
+    "globalSetup": "./__test__/jest-setup.js",
+    "globalTeardown": "./__test__/jest-teardown.js",
+    "testEnvironment": "./__test__/jest-mongo.js"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
